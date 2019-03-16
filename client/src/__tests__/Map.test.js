@@ -8,8 +8,5 @@ afterEach(cleanup);
 
 it('Should render a map component', async () => {
     const map = render(<PollMap />,);
-    console.log('we in diss bitch')
-    // const map2 = await waitForElement(() => getByText(/map/i),)
-
-    // expect(map).toBeTruthy();
+    expect(map).toBeTruthy();
 });

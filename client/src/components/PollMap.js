@@ -1,16 +1,39 @@
 import React, { Component } from 'react';
 import ReactMapGL from 'react-map-gl';
+import zipcodes from 'zipcodes';
 class PollMap extends Component {
-    state = {
-        viewport: {
-          width: 400,
-          height: 400,
-          latitude: 37.7577,
-          longitude: -122.4376,
-          zoom: 8
+    constructor(props) {
+        super(props)
+        this.state = {
+            viewport: {
+              width: 400,
+              height: 400,
+              latitude: 37.7577,
+              longitude: -122.4376,
+              zoom: 8
+            }
+          };
+          this.dummyData = 78665
+          this.handleLocation = this.handleLocation.bind(this)
         }
-      };
-      render() {
+      
+        handleLocation () {
+            let location = zipcodes.lookup(this.dummyData);
+            this.setState({
+                viewport:{
+                    width: 400,
+                    height: 400,
+                    latitude: location.latitude,
+                    longitude: location.longitude,
+                    zoom: 8
+                }
+            })
+        }
+        componentDidMount() {
+            this.handleLocation()
+            
+        }
+    render() {
         return (
           <ReactMapGL
             {...this.state.viewport}
