@@ -13,6 +13,7 @@ const setup = () => {
   const form = getByTestId('regCheckForm');
   return { form };
 }
+
 it('iframe is on the page', () => {
   const form = setup();
   expect(form).toBeTruthy();
