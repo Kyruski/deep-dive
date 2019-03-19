@@ -1,32 +1,24 @@
-const createError = require('http-errors');
-const logger = require('morgan');
-const express = require('express');
+const createError = require("http-errors");
+const logger = require("morgan");
+const express = require("express");
 const app = express();
+const db = require('../db/index.js')
 
-// const db = require('../db/index.js')
-const config = require('../knexfile')['production'];
-const knex = require('knex')(config)
-const sql = knex('test table').then((result) => {
-  console.log('successful open connection to hosted database')
-}).catch((err) => {
-  console.log('err:', err)
-
-})
-//change
-
-
-// open up CORS 
+// open up CORS
 app.use((_, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
-app.use(logger('dev'));
+app.use(logger("dev"));
 
 // You can place your routes here, feel free to refactor:
-const { example } = require('./routes');
-app.use('/api/example', example)
+const { candidates, policies, voter } = require("./routes");
+app.use("/api/candidates", candidates);
+app.use("/api/policies", policies);
+app.use("/api/voter", voter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

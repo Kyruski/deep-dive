@@ -1,3 +1,5 @@
-const example = require('./example');
+const candidates = require("./candidates");
+const policies = require('./policies')
+const voter = require('./voter')
 
-module.exports = { example }
+module.exports = { candidates, policies, voter };

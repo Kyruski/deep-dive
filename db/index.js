@@ -1,12 +1,52 @@
-// const knex = require('knex')
-// const knexfile = require('../knexfile')
-// // var pg = require('knex')({ client: 'pg' });
+const config = require('../knexfile')['production'];
+const knex = require('knex')(config)
 
-// let connection = knexfile.from('test table').select('*')
-//   .then((rows) => {
-//     console.log('connected to database bitch')
-//   })
+const initialConnection = knex('test table').then((result) => {
+  console.log('successful connection to hosted database, lets go team!')
+}).catch((err) => {
+  console.log('err:', err)
+})
 
-// //database query route endpoints go here
+const findAllCandidates = (err, cb) => {
+  knex('candidates')
+    .then((results) => {
+      cb(null, results)
+      console.log('results:', results)
+    })
+    .catch((err) => {
+      cb(err)
+      console.log('err:', err)
+    })
+}
 
-// module.exports = connection;
+const findAllPolicies = (err, cb) => {
+  knex('policies')
+    .then((results) => {
+      cb(null, results)
+      console.log('results:', results)
+    })
+    .catch((err) => {
+      cb(err)
+      console.log('err:', err)
+    })
+}
+
+const findAllVoterId = (err, cb) => {
+  knex('voter-id')
+    .then((results) => {
+      cb(null, results)
+      console.log('results:', results)
+    })
+    .catch((err) => {
+      cb(err)
+      console.log('err:', err)
+    })
+}
+
+module.exports = {
+  initialConnection,
+  findAllCandidates,
+  findAllPolicies,
+  findAllVoterId
+
+}
