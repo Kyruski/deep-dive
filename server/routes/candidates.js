@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const proPubKey = require("./api-keys");
 
 // Test GET
 router.get("/", (req, res) => {
