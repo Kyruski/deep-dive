@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Select, Radio } from 'antd';
+import { Select } from 'antd';
+
+import 'antd/dist/antd.css';
 
 const VoterId = () => {
   const Option = Select.Option;
@@ -7,7 +9,7 @@ const VoterId = () => {
   const children = [];
   for (let i = 10; i < 36; i++) {
     children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
-  }
+  } //this should make a call to the api
   
   function handleChange(value) {
     console.log(`Selected: ${value}`);
@@ -19,9 +21,9 @@ const VoterId = () => {
     defaultValue="Alabama"
     onChange={handleChange}
     style={{ width: 200 }}
-  >
+    >
     {children}
-  </Select>
+    </Select>
   )
 }
 

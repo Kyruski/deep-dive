@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import './voterId'
+import VoterId from './voterId';
 
 const api = `http://localhost:8000/api/example`
 
@@ -21,6 +23,7 @@ class App extends Component {
   render() {
     return (
       <>
+        <VoterId />
         <h1>Welcome to Blue Ocean</h1>
         <ul>
           {this.state.seaCreatures.map((seaCreature, i) => <li key={i}>{seaCreature}</li>)}
