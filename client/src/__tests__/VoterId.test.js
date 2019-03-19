@@ -7,4 +7,3 @@ import VoterId from '../VoterId';
 
 afterEach(cleanup);
 
-//I want to make a 
