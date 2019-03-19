@@ -1,29 +1,27 @@
-import React from 'react';
-import { Menu, Dropdown, Button, Icon, message } from 'antd';
-
+import React, { useState } from 'react';
+import { Select, Radio } from 'antd';
 
 const VoterId = () => {
-  function handleButtonClick(e) {
-    message.info('Click on left button.');
-    console.log('click left button', e);
+  const Option = Select.Option;
+
+  const children = [];
+  for (let i = 10; i < 36; i++) {
+    children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
   }
   
-  function handleMenuClick(e) {
-    message.info('Click on menu item.');
-    console.log('click', e);
+  function handleChange(value) {
+    console.log(`Selected: ${value}`);
   }
-  
-  const menu = (
-    <Menu onClick={handleMenuClick}>
-      <Menu.Item key="1"><Icon type="user" />1st menu item</Menu.Item>
-      <Menu.Item key="2"><Icon type="user" />2nd menu item</Menu.Item>
-      <Menu.Item key="3"><Icon type="user" />3rd item</Menu.Item>
-    </Menu>
-  );
+
   return (
-    <Dropdown.Button onClick={handleButtonClick} overlay={menu}>
-      Dropdown
-    </Dropdown.Button>
+    <Select
+    size={'large'}
+    defaultValue="Alabama"
+    onChange={handleChange}
+    style={{ width: 200 }}
+  >
+    {children}
+  </Select>
   )
 }
 

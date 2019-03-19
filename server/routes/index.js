@@ -1,3 +1,4 @@
-const example = require('./example');
+const candidates = require("./candidates");
+const voterId = require("./voterId");
 
-module.exports = { example }
+module.exports = { candidates, voterId };
