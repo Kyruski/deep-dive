@@ -16,10 +16,8 @@ app.use((_, res, next) => {
 app.use(logger("dev"));
 
 // You can place your routes here, feel free to refactor:
-const { example, candidates } = require("./routes");
+const { candidates } = require("./routes");
 app.use("/api/candidates", candidates);
-// TO BE DELETED
-app.use("/api/example", example);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

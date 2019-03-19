@@ -16,17 +16,16 @@ describe("Array", () => {
 });
 
 // Tests for API calls start below
-describe("GET /api.propublica.org/congress/v1/80-115/senate/members.json", () => {
-  it("should do something", done => {
+describe("GET /", () => {
+  it("should get json test data", done => {
     chai
-      .request(app)
-      .get("/api.propublica.org/congress/v1/80-115/senate/members.json")
+      .request("http://localhost:8000")
+      .get("/api/candidates")
       .end((err, res) => {
         should.not.exist(err);
         should.exist(res);
         res.should.have.status(200);
         expect(res).to.be.json;
-        // res.body.should.be.a("array");
         done();
       });
   });
