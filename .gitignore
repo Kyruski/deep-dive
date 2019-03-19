@@ -39,3 +39,6 @@ bower_components/
 
 # API Keys
 /server/routes/api-keys.js 
+
+# nyc logs
+.nyc_output
