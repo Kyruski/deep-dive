@@ -1,5 +1,5 @@
-CREATE TABLE voter-id (
-  state varchar(20) PRIMARY KEY,
-  in-person text,
-  absentee text
-);
+-- CREATE TABLE voter_id (
+--   state varchar(20) PRIMARY KEY,
+--   in_person text,
+--   absentee text
+-- );
