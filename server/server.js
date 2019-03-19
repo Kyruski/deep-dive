@@ -17,7 +17,7 @@ app.use(logger("dev"));
 const { candidates, voterId } = require("./routes");
 app.use("/api/candidates", candidates);
 
-app.use("/voterId/:state", voterId)
+app.use('/voterId/:state', voterId)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

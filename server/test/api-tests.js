@@ -17,11 +17,18 @@ describe("Array", () => {
 
 // Tests for API calls start below
 describe('/GET VoterId', () => {
-  it('it should GET all states VoterId requirements', (done) => {
-    chai.request('http://localhost:8000')
+  it('it should GET VoterId requirements by state', (done) => {
+    chai
+      .request('http://localhost:8000')
       .get('/voterId')
-
-  })
+      .end((err, res) => {
+        should.not.exist(err);
+        should.exist(res);
+        res.should.have.status(200);
+        expect(res).to.be.json;
+        done();
+      });
+  });
 })
 describe("GET /", () => {
   it("should get json test data", done => {
