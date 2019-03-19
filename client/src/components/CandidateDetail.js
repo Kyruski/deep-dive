@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+import { Layout } from 'antd';
+import './CandidateDetailComponents/CandidateDetail.css';
 
 export default class App extends Component {
   constructor(props) {
@@ -11,9 +12,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <div test-id='parentID'>
-        
-      </div>
+      <Layout
+      
+      />
     )
   }
 }
