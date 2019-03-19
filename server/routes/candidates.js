@@ -1,11 +1,13 @@
 const router = require("express").Router();
+const proPubKey = require("./api-keys");
 
+// Test GET
 router.get("/", (req, res) => {
   res.json({ data: ["dolphins", "manatees", "sea turles"] });
 });
 
-router.get("/hello", (req, res) => {
-  res.json({ data: ["dolphins", "manatees", "sea turles"] });
-});
+// Routes for Database
+
+// Routes for APIs start here
 
 module.exports = router;
