@@ -11,8 +11,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <div data-testid='parentID'>
-
+      <div test-id='parentID'>
+        
       </div>
     )
   }
