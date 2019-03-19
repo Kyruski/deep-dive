@@ -1,3 +1,6 @@
-const example = require('./example');
+const candidates = require("./candidates");
 
-module.exports = { example }
+// TO BE DELETED
+const example = require("./example");
+
+module.exports = { candidates, example };
