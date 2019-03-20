@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './CandidateDetailComponents/CandidateDetail.css';
 import BiographicCard from './CandidateDetailComponents/BiographicCard.js'
 import Photo from './CandidateDetailComponents/CandidatePhoto.js'
-import Policies from './CandidateDetailComponents/Policies';
+import PolicyBlock from './CandidateDetailComponents/PolicyBlock.js';
 
 export default class App extends Component {
   constructor(props) {
@@ -60,8 +60,8 @@ export default class App extends Component {
     return (
       <div test-id='ancestor' style={{backgroundColor: '#ECECEC', padding: '20px', alignContent: 'center' }}>
         <BiographicCard candidate={this.trumpTest} />
-        <Photo image={this.trumpTest.photo} />
-        <Policies candidate={this.trumpTest}/>
+        {/* <Photo image={this.trumpTest.photo} /> */}
+        <PolicyBlock candidate={this.trumpTest}/>
       </div>
     )
   }

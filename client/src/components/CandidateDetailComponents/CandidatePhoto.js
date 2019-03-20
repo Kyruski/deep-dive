@@ -2,7 +2,7 @@ import React from 'react';
 
 const Photo = (props) => {
   const photoStyle = {
-    display: "inline-block",
+    display: "inline",
     verticalAlign: "top",
     height: "600px"
   }
