@@ -1,10 +1,10 @@
 import React from 'react'
 import {List} from 'antd';
 
-const Component = (props) => {
+const BioList = (props) => {
   return( 
     <List />
   )
 };
 
-export default Component;
+export default BioList;
