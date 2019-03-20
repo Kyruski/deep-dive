@@ -12,13 +12,13 @@ class App extends Component {
     this.state = { seaCreatures: [] }
   }
 
-  componentDidMount() {
-    fetch(api)
-      .then(res => res.json())
-      .then(seaCreatures => {
-        this.setState({ seaCreatures: seaCreatures.data })
-      })
-  }
+  // componentDidMount() {
+  //   fetch(api)
+  //     .then(res => res.json())
+  //     .then(seaCreatures => {
+  //       this.setState({ seaCreatures: seaCreatures.data })
+  //     })
+  // }
 
   render() {
     return (

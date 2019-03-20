@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Axios from 'axios'
 import { Select } from 'antd';
 
 import 'antd/dist/antd.css';
@@ -6,10 +7,22 @@ import 'antd/dist/antd.css';
 const VoterId = () => {
   const Option = Select.Option;
 
-  //make a GET request to fill states (may be able to gather static info)
+  let [states, setStates] = useState([]);
   const children = [];
-  for (let i = 10; i < 36; i++) {
-    children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
+
+  useEffect(() => {
+    const api = 'http://localhost:8000/api/voter';
+    Axios
+      .get(api)
+      .then((results) => {
+        setStates(results.data);
+      })
+     .catch((err) => console.log('error', err))
+  }, [])
+
+
+  for (let i = 0; i < states.length; i++) {
+    children.push(<Option key={states[i]}>{states[i]}</Option>);
   } //this should make a call to the api
   
   function handleChange(value) {
@@ -19,7 +32,7 @@ const VoterId = () => {
   return (
     <Select
       size={'large'}
-      defaultValue="Alabama"
+      defaultValue={states[0]}
       onChange={handleChange}
       style={{ width: 200 }}
     >
