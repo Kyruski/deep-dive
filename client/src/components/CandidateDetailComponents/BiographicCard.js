@@ -56,6 +56,7 @@ class BioCard extends Component {
       <>
         <Card title={`${this.state.firstname} '${this.state.nickname}' ${this.state.lastname}`} style={this.cardStyle} ref={this.state.bioCardRef}>
           <p>{this.state.bio}</p>
+          <p>{this.props.details ? this.props.details.party : null}</p>
           <p style={this.pStyle}>{this.state.birthday}</p>
           <p style={this.pStyle}>Twitter: <a href={`http://twitter.com/${this.state.twitter}`}>@{this.state.twitter}</a></p>
           <p>Campaign HQ: <a href={`${this.state.campaign}`}>{this.state.campaign}</a></p>

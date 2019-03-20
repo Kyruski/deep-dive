@@ -8,7 +8,9 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      everything: null
+      details: null,
+      bio: '',
+      policies: []
     }
     this.candidateTemplate = {
       firstname: '',
@@ -54,11 +56,21 @@ export default class App extends Component {
         plannedParenthood: 'No'
       }
     }
+    this.server = process.env.SERVER || 'http://localhost:8000'
   }
   betterThanDemocracy() {
-    Axios.get('/api/candidateinfopage')
-      .then(data => this.setState({everything: data}) )
+    const vote = Math.floor(Math.random()*25)
+    Axios.get(`${this.server}/api/candidateinfopage`)
+      .then(data => this.setState({details: data.data[vote]}) )
       .catch(err => console.log(err))
+
+      Axios.get(`${this.server}/api/bios`)
+      .then(data => this.setState({bio: data.data[vote]}))
+      .catch(err => console.log(err))
+
+      Axios.get(`${this.server}/api/policies`)
+        .then(data => this.setState({policies: data.data[vote]}))
+        .catch(err => console.log(err))
   }
   componentDidMount() {
     this.betterThanDemocracy()
@@ -66,7 +78,12 @@ export default class App extends Component {
   render() {
     return (
       <div test-id='ancestor' style={{backgroundColor: '#ECECEC', padding: '20px', width: '75%' }}>
-        <BiographicCard candidate={this.trumpTest} />
+        <BiographicCard 
+          candidate={this.trumpTest} 
+          bio={this.state.bio} 
+          details={this.state.details}
+          policies={this.state.policies} 
+        />
         {/* <Photo image={this.trumpTest.photo} /> */}
         <PolicyBlock candidate={this.trumpTest}/>
       </div>

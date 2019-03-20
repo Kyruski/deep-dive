@@ -1,24 +1,22 @@
+
 import React, { Component } from 'react';
+import PollMap from './components/PollMap.js';
 import './App.css';
-import VoterInfoDetail from './components/VoterInfoDetail.js';
 import CandidateDetail from './components/CandidateDetail.js'
+import { Head, MainRoutes } from './components/header'
 
-const api = `http://localhost:8000/api/example`
 
+console.log(MainRoutes);
+const api = `http://localhost:8000/api/example`;
 
 class App extends Component {
-  constructor () {
-    super()
-    this.state = { seaCreatures: [] }
+  constructor() {
+
+    super();
+    this.state = { seaCreatures: [] };
   }
 
-  componentDidMount() {
-    fetch(api)
-      // .then(res => res.json())
-      // .then(seaCreatures => {
-      //   this.setState({ seaCreatures: seaCreatures.data })
-      // })
-  }
+  componentDidMount() { }
 
   render() {
     return (
@@ -29,6 +27,9 @@ class App extends Component {
         </ul>
         {/* <VoterInfoDetail /> */}
         <CandidateDetail />
+        {/* <Head /> */}
+        {/* <MainRoutes /> */}
+        {/* need to update with CandidateList */}
       </>
     );
   }
