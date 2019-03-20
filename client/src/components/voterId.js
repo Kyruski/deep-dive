@@ -9,7 +9,7 @@ const VoterId = () => {
   const Option = Select.Option;
 
   let [states, setStates] = useState([]);
-  let [choice, setChoice] = useState("Alaska");
+  let [choice, setChoice] = useState("Alabama");
   const children = [];
 
   useEffect(() => {
@@ -17,7 +17,8 @@ const VoterId = () => {
     Axios
       .get(api)
       .then((results) => {
-        setStates(results.data);
+        let sorted = results.data.sort()
+        setStates(sorted);
       })
      .catch((err) => console.log('error', err))
   }, [])
