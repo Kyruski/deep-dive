@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 import VoterInfoDetail from "./components/VoterInfoDetail.js";
-import StateId from "./components/stateId";
+import { Router, Link } from "@reach/router";
+import LandingPage from "./components/LandingPage";
+import { Head, HeadRoutes } from "./header";
 
 const api = `http://localhost:8000/api/example`;
 
@@ -11,28 +13,31 @@ class App extends Component {
     this.state = { seaCreatures: [] };
   }
 
-  // componentDidMount() {
-  //   fetch(api)
-  //     .then(res => res.json())
-  //     .then(seaCreatures => {
-  //       this.setState({ seaCreatures: seaCreatures.data });
-  //     });
-  // }
+  componentDidMount() {}
 
   render() {
     return (
       <>
-        <h1>Welcome to Blue Ocean</h1>
-        <ul>
-          {this.state.seaCreatures.map((seaCreature, i) => (
-            <li key={i}>{seaCreature}</li>
-          ))}
-        </ul>
+        <Head />
+        <HeadRoutes />
         <VoterInfoDetail />
-        <StateId />
+        <Router>
+          <LandingPage path="/" />
+          <CandidateList path="candidates/*" />
+          <VoterInfoDetail path="voterInfo/*" />
+        </Router>
       </>
     );
   }
 }
 
 export default App;
+
+// Everything below this point is a placeholder
+
+const CandidateList = props => <div>This is our Candidate List</div>;
+
+const header = {
+  height: "100px",
+  borderBottom: "1px solid black"
+};
