@@ -41,7 +41,8 @@ describe("GET candidates", () => {
         res.should.have.status(200);
         expect(res).to.be.json;
         done();
-      }).catch(err => err)
+      })
+      .catch(err => err);
   });
 });
 
@@ -56,7 +57,8 @@ describe("GET policies", () => {
         res.should.have.status(200);
         expect(res).to.be.json;
         done();
-      }).catch(err => err)
+      })
+      .catch(err => err);
   });
 });
 
@@ -65,6 +67,37 @@ describe("GET voter", () => {
     chai
       .request("http://localhost:8000")
       .get("/api/voter")
+      .then((err, res) => {
+        should.not.exist(err);
+        should.exist(res);
+        res.should.have.status(200);
+        expect(res).to.be.json;
+        done();
+      })
+      .catch(err => err);
+  });
+});
+
+describe("GET candidateInfoPage", () => {
+  it("should get name, photo, and party for all candidates", () => {
+    chai
+      .request("http://localhost:8000")
+      .get("/api/candidateInfoPage")
+      .then((err, res) => {
+        should.not.exist(err);
+        should.exist(res);
+        res.should.have.status(200);
+        expect(res).to.be.json;
+        done();
+      }).catch(err => err)
+  });
+});
+
+describe("GET bios", () => {
+  it("should get bios for all candidates", () => {
+    chai
+      .request("http://localhost:8000")
+      .get("/api/bios")
       .then((err, res) => {
         should.not.exist(err);
         should.exist(res);

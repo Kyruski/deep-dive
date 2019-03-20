@@ -4,7 +4,11 @@
   "private": true,
   "dependencies": {
     "@reach/router": "^1.2.1",
+<<<<<<< HEAD
     "antd": "^3.15.1",
+=======
+    "antd": "^3.15.0",
+>>>>>>> 33e99de0e316dfca79439d2080573885de95c831
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-scripts": "2.1.8"
