@@ -54,11 +54,26 @@ const findCandidatePage = (err, cb) => {
     })
 }
 
+const findAllBios = (err, cb) => {
+  knex('bios')
+    .then((results) => {
+      cb(null, results)
+      console.log('results:', results)
+    })
+    .catch((err) => {
+      cb(err)
+      console.log('err:', err)
+    })
+}
+
+
+
 
 module.exports = {
   initialConnection,
   findAllCandidates,
   findAllPolicies,
   findAllVoterId,
-  findCandidatePage
+  findCandidatePage,
+  findAllBios
 };
