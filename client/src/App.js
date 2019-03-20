@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Head, HeadRoutes } from './header'
+import VoterInfoDetail from './components/VoterInfoDetail.js'
 
 const api = `http://localhost:8000/api/example`
 
@@ -30,6 +31,7 @@ class App extends Component {
           {this.state.seaCreatures.map((seaCreature, i) => <li key={i}>{seaCreature}</li>)}
         </ul>
         <HeadRoutes />
+        <VoterInfoDetail />
       </>
     );
   }
