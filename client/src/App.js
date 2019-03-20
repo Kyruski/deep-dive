@@ -1,20 +1,16 @@
-
-import React, { Component } from 'react';
-import './App.css';
-import { Head, HeadRoutes } from './header'
-import VoterInfoDetail from './components/VoterInfoDetail.js'
-import CandidateCards from './components/CandidateCards.js';
-
+import React, { Component } from "react";
+import "./App.css";
+import { Head, HeadRoutes } from "./header";
+import VoterInfoDetail from "./components/VoterInfoDetail.js";
+import CandidateCards from "./components/CandidateCards.js";
 
 import { Router, Link } from "@reach/router";
 import LandingPage from "./components/LandingPage";
-
 
 const api = `http://localhost:8000/api/example`;
 
 class App extends Component {
   constructor() {
-
     super();
     this.state = { seaCreatures: [] };
   }
@@ -24,7 +20,6 @@ class App extends Component {
   render() {
     return (
       <>
-
         <Head />
         <HeadRoutes />
         <VoterInfoDetail />
@@ -33,7 +28,6 @@ class App extends Component {
           <CandidateList path="candidates/*" />
           <VoterInfoDetail path="voterInfo/*" />
         </Router>
-
       </>
     );
   }
