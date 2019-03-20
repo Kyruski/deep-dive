@@ -5,7 +5,7 @@ const api = `http://localhost:8000/api/example`
 
 
 class App extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = { seaCreatures: [] }
   }
