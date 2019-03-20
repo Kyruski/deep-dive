@@ -1,36 +1,46 @@
 import React, { Component } from 'react';
+import React, { Component } from "react";
+import VoterInfoDetail from "./components/VoterInfoDetail.js";
+import { Router, Link } from "@reach/router";
+import LandingPage from "./components/LandingPage";
+import { Head, HeadRoutes } from "./header";
 import './App.css';
 import './voterId'
 import VoterId from './voterId';
 
-const api = `http://localhost:8000/api/example`
-
+const api = `http://localhost:8000/api/example`;
 
 class App extends Component {
   constructor() {
-    super()
-    this.state = { seaCreatures: [] }
+    super();
+    this.state = { seaCreatures: [] };
   }
 
-  // componentDidMount() {
-  //   fetch(api)
-  //     .then(res => res.json())
-  //     .then(seaCreatures => {
-  //       this.setState({ seaCreatures: seaCreatures.data })
-  //     })
-  // }
+  componentDidMount() {}
 
   render() {
     return (
       <>
-        <VoterId />
-        <h1>Welcome to Blue Ocean</h1>
-        <ul>
-          {this.state.seaCreatures.map((seaCreature, i) => <li key={i}>{seaCreature}</li>)}
-        </ul>
+        <Head />
+        <HeadRoutes />
+        <VoterInfoDetail />
+        <Router>
+          <LandingPage path="/" />
+          <CandidateList path="candidates/*" />
+          <VoterInfoDetail path="voterInfo/*" />
+        </Router>
       </>
     );
   }
 }
 
 export default App;
+
+// Everything below this point is a placeholder
+
+const CandidateList = props => <div>This is our Candidate List</div>;
+
+const header = {
+  height: "100px",
+  borderBottom: "1px solid black"
+};

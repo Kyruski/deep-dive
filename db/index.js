@@ -76,9 +76,6 @@ const findAllBios = (err, cb) => {
     })
 }
 
-
-
-
 module.exports = {
   initialConnection,
   findAllCandidates,
@@ -88,3 +85,4 @@ module.exports = {
   findCandidatePage,
   findAllBios
 };
+
