@@ -54,14 +54,21 @@ class BioCard extends Component {
   render() {
     return(
       <>
-        <Card title={`${this.state.firstname} '${this.state.nickname}' ${this.state.lastname}`} style={this.cardStyle} ref={this.state.bioCardRef}>
-          <p>{this.state.bio}</p>
+        <Card 
+        title={this.props.details ? `${this.props.details['first-name']} ${this.props.details['last-name']}`: null}  
+        style={this.cardStyle} 
+        ref={this.state.bioCardRef}
+        >
+          <p>{this.props.bio ? this.props.bio.bio : null}</p>
           <p>{this.props.details ? this.props.details.party : null}</p>
           <p style={this.pStyle}>{this.state.birthday}</p>
           <p style={this.pStyle}>Twitter: <a href={`http://twitter.com/${this.state.twitter}`}>@{this.state.twitter}</a></p>
           <p>Campaign HQ: <a href={`${this.state.campaign}`}>{this.state.campaign}</a></p>
         </Card>
-        <Photo image={this.props.candidate.photo} maxHeight={this.state.height}/>
+        <Photo 
+        image={this.props.details ? this.props.details['photo-url'] : null} 
+        maxHeight={this.state.height} 
+        maxWidth={this.state.width}/>
       </>
     )
   }

@@ -12,28 +12,6 @@ export default class App extends Component {
       bio: '',
       policies: []
     }
-    this.candidateTemplate = {
-      firstname: '',
-      lastname: '',
-      nickname: '',
-      birthday: '',
-      photo: '',
-      campaign: '',
-      twitter: '',
-      party: '',
-      bio: '',
-      donors: '',
-      policies: {
-        abortion: '',
-        lgbtAdoption: '',
-        gunControl: '',
-        equalPay: '',
-        climateChange: '',
-        gayMarriage: '',
-        borderWall: '',
-        plannedParenthood: ''
-      }
-    }
     this.trumpTest = {
       firstname: 'Donald',
       lastname: 'Trump',
@@ -85,7 +63,7 @@ export default class App extends Component {
           policies={this.state.policies} 
         />
         {/* <Photo image={this.trumpTest.photo} /> */}
-        <PolicyBlock candidate={this.trumpTest}/>
+        <PolicyBlock policies={this.state.policies} candidate={this.trumpTest}/>
       </div>
     )
   }
