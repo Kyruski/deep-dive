@@ -4,7 +4,8 @@ import { Card, Col, Row } from "antd";
 import axios from "axios";
 
 const myStyles = {
-  height: "500px"
+  height: "50vh",
+  overflow: "scroll"
 };
 
 const StateId = props => {

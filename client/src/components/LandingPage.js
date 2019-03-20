@@ -3,11 +3,13 @@ import { Link } from "@reach/router";
 import { Card } from "antd";
 import "antd/dist/antd.css";
 import "./LandingPage.css";
+import VoterId from './voterId'
 const polls = require("../lib/polls.jpg");
 const voting = require("../lib/voting.jpg");
 const { Meta } = Card;
 
 const LandingPage = props => (
+  <div>
   <div
     style={{
       display: "flex",
@@ -24,7 +26,7 @@ const LandingPage = props => (
         <Meta
           title="Candidates"
           description="Click here to get info on your 2020 presidential candidates"
-        />
+          />
       </Card>
     </Link>
     <Link to="voterInfo">
@@ -35,9 +37,13 @@ const LandingPage = props => (
         <Meta
           title="Voter Info"
           description="Click here to get info on where to vote, what to bring, and if you are registered"
-        />
+          />
       </Card>
     </Link>
+  </div>
+  <div>
+    <VoterId />
+  </div>
   </div>
 );
 

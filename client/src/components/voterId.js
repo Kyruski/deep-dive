@@ -37,7 +37,7 @@ const VoterId = () => {
     <>
       <Select
         size={'large'}
-        defaultValue={states[0]}
+        defaultValue={choice}
         onChange={handleChange}
         style={{ width: 200 }}
       >

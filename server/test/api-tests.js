@@ -19,7 +19,7 @@ describe('/GET VoterId', () => {
   it('it should GET VoterId requirements by state', (done) => {
     chai
       .request('http://localhost:8000')
-      .get('/api/voterId')
+      .get('/api/voterId/:state')
       .end((err, res) => {
         should.not.exist(err);
         should.exist(res);
