@@ -1,32 +1,56 @@
 import React from 'react';
-import { Row, Col, Card, Layout, Menu, Anchor } from 'antd';
+import { Layout, Menu } from 'antd';
 import "antd/dist/antd.css";
-// import { Router, Link } from "@reach/router"
+import { Router, Link } from "@reach/router"
 
-const { Header, Content, Footer } = Layout;
+// import Home from './pathToHome'
+// import VoterInfo from './pathToVoterInfo'
+// import CandidateList from './pathToCandidate'
+
+const { Header } = Layout;
+
+const Home = () => <div>Home placeholder</div>
+const Candidates = () => <div>Candidates placeholder</div>
+const VoterInfo = () => <div>Voter Info placeholder</div>
+
+const HeadRoutes = (props) => (
+  <>
+    <Router style={{ color: 'blue' }}>
+      <Home path="/" />
+      <Candidates path="candidates/*" />
+      <VoterInfo path="voter-info/*" />
+    </Router>
+  </>
+)
 
 const Head = (props) => (
   <>
     <Header test-id='header' className="header">
-      <div className="logo" />
+      {/* <div className="logo" /> */}
       <Menu
         theme="dark"
         mode="horizontal"
-        defaultSelectedKeys={['2']}
+        defaultSelectedKeys={['1']}
         style={{ lineHeight: '64px' }}
       >
         <Menu.Item key="1">
-          Home
-          </Menu.Item>
+          <Link to="/">
+            Home
+        </Link>
+        </Menu.Item>
         <Menu.Item key="2">
-          Candidates
-          </Menu.Item>
+          <Link to="/candidates/*">
+            Candidates
+        </Link>
+        </Menu.Item>
         <Menu.Item key="3">
-          Voter Info
-          </Menu.Item>
+          <Link to="/voter-info/*">
+            Voter Info
+        </Link>
+        </Menu.Item>
       </Menu>
     </Header>
   </>
 )
 
-export default Head;
+export { Head, HeadRoutes };
