@@ -15,6 +15,8 @@ class App extends Component {
       .then(res => res.json())
       .then(seaCreatures => {
         this.setState({ seaCreatures: seaCreatures.data })
+      }).catch(err => {
+        console.log(err);
       })
   }
 

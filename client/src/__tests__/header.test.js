@@ -3,13 +3,13 @@ import { render, cleanup, configure } from 'react-testing-library'
 
 // this adds custom jest matchers from jest-dom
 import 'jest-dom/extend-expect'
-import Header from '../header';
+import Head from '../header';
 
 afterEach(cleanup);
 configure({ testIdAttribute: 'test-id' });
 
 const setup = () => {
-  const { getByTestId } = render(<Header />);
+  const { getByTestId } = render(<Head />);
   const form = getByTestId('header');
   return { form };
 }
