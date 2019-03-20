@@ -16,11 +16,14 @@ app.use((_, res, next) => {
 
 app.use(logger("dev"));
 
+
 // Server Routes
-const { candidates, policies, voter } = require("./routes");
+const { candidates, policies, voter, candidateInfoPage } = require("./routes");
+
 app.use("/api/candidates", candidates);
 app.use("/api/policies", policies);
 app.use("/api/voter", voter);
+app.use('/api/candidateinfopage', candidateInfoPage)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
