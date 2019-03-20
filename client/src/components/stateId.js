@@ -8,20 +8,21 @@ const myStyles = {
 };
 
 const StateId = props => {
-  let [usaState, setUsaState] = useState("Select a state");
+  let [usaState, setUsaState] = useState(props.usaState);
   let [inPerson, setInPerson] = useState("In person details here");
   let [absentee, setAbsentee] = useState("Absentee details here");
 
   useEffect(() => {
+    setUsaState(props.usaState)
     axios
-      .get("http://localhost:8000/api/voter", {
+      .get(`http://localhost:8000/api/voterId/${usaState}`, {
         params: {
           id: ""
         }
       })
       .then(response => {
-        // console.log("use effect response", response.data);
-        setUsaState(response.data[0].state);
+        console.log("use effect response", response.data);
+        //setUsaState(response.data[0].state);
         setInPerson(response.data[0].in_person);
         setAbsentee(response.data[0].absentee);
       })

@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import React, { Component } from "react";
 import VoterInfoDetail from "./components/VoterInfoDetail.js";
 import { Router, Link } from "@reach/router";
 import LandingPage from "./components/LandingPage";
 import { Head, HeadRoutes } from "./header";
 import './App.css';
-import './voterId'
-import VoterId from './voterId';
+import VoterId from './components/voterId';
 
 const api = `http://localhost:8000/api/example`;
 
@@ -29,6 +27,7 @@ class App extends Component {
           <CandidateList path="candidates/*" />
           <VoterInfoDetail path="voterInfo/*" />
         </Router>
+        <VoterId />
       </>
     );
   }
