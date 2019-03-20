@@ -1,8 +1,13 @@
 import React from 'react';
 
 const Photo = (props) => {
+  const photoStyle = {
+    display: "inline-block",
+    verticalAlign: "top",
+    height: "600px"
+  }
   return( 
-    <img src={props.image} alt=''></img>
+    <img style={photoStyle} src={props.image} alt=''></img>
   )
 };
 

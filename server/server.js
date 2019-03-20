@@ -23,8 +23,8 @@ const { candidates, policies, voter, candidateInfoPage, bios } = require("./rout
 app.use("/api/candidates", candidates);
 app.use("/api/policies", policies);
 app.use("/api/voter", voter);
-app.use('/api/candidateinfopage', candidateInfoPage)
-app.use("/api/bios", bios)
+app.use('/api/candidateinfopage', candidateInfoPage);
+app.use("/api/bios", bios);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

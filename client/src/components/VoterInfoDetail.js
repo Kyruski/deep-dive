@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Row, Col, Card, Layout, Menu, Anchor } from 'antd';
 import "antd/dist/antd.css";
 import { Router, Link } from "@reach/router"
-import SideBar from './SideBar'
+import SideBar from './SideBar.js'
 
 const { Meta } = Card;
 const {
@@ -28,7 +28,7 @@ let VoterInfoDetail = () => {
   return (
     <Layout>
       <Layout>
-        <SideBar />
+        < SideBar/>
         <Content style={{ height: "80vh" }}>
           <NavRoutes />
         </Content>
@@ -163,4 +163,4 @@ const Register = () => {
   )
 }
 
-export default VoterInfoDetail
+export default VoterInfoDetail;
