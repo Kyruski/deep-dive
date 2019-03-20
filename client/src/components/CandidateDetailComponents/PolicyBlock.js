@@ -6,6 +6,7 @@ const PolicyBlock = (props) => {
   const policyNames = Object.keys(props.candidate.policies);
   const policies = [abortion, lgbtAdoption, gunControl, equalPay, climateChange, gayMarriage, borderWall, plannedParenthood];
   const divStyle = {
+    // width: 0,
     display: 'inline-flex',
     flexWrap: 'wrap'
   }

@@ -58,7 +58,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div test-id='ancestor' style={{backgroundColor: '#ECECEC', padding: '20px', alignContent: 'center' }}>
+      <div test-id='ancestor' style={{backgroundColor: '#ECECEC', padding: '20px', width: '75%' }}>
         <BiographicCard candidate={this.trumpTest} />
         {/* <Photo image={this.trumpTest.photo} /> */}
         <PolicyBlock candidate={this.trumpTest}/>

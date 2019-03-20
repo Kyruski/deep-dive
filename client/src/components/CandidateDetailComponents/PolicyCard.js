@@ -3,7 +3,7 @@ import { Card } from 'antd';
 
 const PolicyCard = (props) => {
   const cardStyle = {
-    width: '200px',
+    width: '30%',
     margin: '6px'
   }
   return (
