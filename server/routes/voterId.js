@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const db = require('../../db/index.js')
 
-let urlencodedParser = bodyParser.urlencoded({ extended: false })
+// let urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 router.get('/:state', urlencodedParser, (req, res) => {
   console.log('what is this --->', req.params.state);
