@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
+import VoterInfoDetail from './components/VoterInfoDetail.js'
 
 const api = `http://localhost:8000/api/example`
 
 
 class App extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = { seaCreatures: [] }
   }
 
   componentDidMount() {
     fetch(api)
-      .then(res => res.json())
-      .then(seaCreatures => {
-        this.setState({ seaCreatures: seaCreatures.data })
-      })
+      // .then(res => res.json())
+      // .then(seaCreatures => {
+      //   this.setState({ seaCreatures: seaCreatures.data })
+      // })
   }
 
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
         <ul>
           {this.state.seaCreatures.map((seaCreature, i) => <li key={i}>{seaCreature}</li>)}
         </ul>
+        <VoterInfoDetail />
       </>
     );
   }
