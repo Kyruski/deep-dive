@@ -1,10 +1,10 @@
 import React from 'react'
 import {Card} from 'antd';
-import BioCard from './BiographicDetailList.js'
+import BioList from './BiographicDetailList.js'
 const BioCard = (props) => {
   return( 
     <Card title={props.name}>
-      
+      <BioList details={props.details} />
     </Card>
   )
 };
