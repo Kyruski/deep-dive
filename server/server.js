@@ -26,7 +26,7 @@ app.use("/api/voter", voter);
 app.use('/api/candidateinfopage', candidateInfoPage)
 app.use("/api/bios", bios)
 
-app.use('/voterId/', voterId)
+app.use('/api/voterId/', voterId)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
