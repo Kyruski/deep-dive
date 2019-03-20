@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
 import "./App.css";
 import { Head, HeadRoutes } from "./header";
@@ -7,6 +8,16 @@ import CandidateCards from "./components/CandidateCards.js";
 import { Router, Link } from "@reach/router";
 import LandingPage from "./components/LandingPage";
 
+=======
+
+import React, { Component } from 'react';
+import PollMap from './components/PollMap.js';
+import './App.css';
+import { Head, MainRoutes } from './components/header'
+
+
+console.log(MainRoutes);
+>>>>>>> 060dc5226ecd21cd439fdd77ae7cd6a701c885ff
 const api = `http://localhost:8000/api/example`;
 
 class App extends Component {
@@ -15,12 +26,13 @@ class App extends Component {
     this.state = { seaCreatures: [] };
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   render() {
     return (
       <>
         <Head />
+<<<<<<< HEAD
         <HeadRoutes />
         <VoterInfoDetail />
         <Router>
@@ -28,18 +40,13 @@ class App extends Component {
           <CandidateList path="candidates/*" />
           <VoterInfoDetail path="voterInfo/*" />
         </Router>
+=======
+        <MainRoutes />
+        {/* need to update with CandidateList */}
+>>>>>>> 060dc5226ecd21cd439fdd77ae7cd6a701c885ff
       </>
     );
   }
 }
 
 export default App;
-
-// Everything below this point is a placeholder
-
-const CandidateList = props => <div>This is our Candidate List</div>;
-
-const header = {
-  height: "100px",
-  borderBottom: "1px solid black"
-};
