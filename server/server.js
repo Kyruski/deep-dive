@@ -16,7 +16,7 @@ app.use((_, res, next) => {
 
 app.use(logger("dev"));
 
-// You can place your routes here, feel free to refactor:
+// Server Routes
 const { candidates, policies, voter } = require("./routes");
 app.use("/api/candidates", candidates);
 app.use("/api/policies", policies);
