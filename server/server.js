@@ -18,12 +18,8 @@ app.use(logger("dev"));
 
 
 // You can place your routes here, feel free to refactor:
-<<<<<<< HEAD
-const { candidates, policies, voter, voterId } = require("./routes");
-=======
-const { candidates, policies, voter, candidateInfoPage, bios } = require("./routes");
+const { candidates, policies, voter, candidateInfoPage, bios, voterId } = require("./routes");
 
->>>>>>> d7d88ac793e138be3acdb799774efb04b8a9edeb
 app.use("/api/candidates", candidates);
 app.use("/api/policies", policies);
 app.use("/api/voter", voter);
