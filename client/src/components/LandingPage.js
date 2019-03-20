@@ -42,5 +42,3 @@ const LandingPage = props => (
 );
 
 export default LandingPage;
-
-// https://files.slack.com/files-pri/T2SVC7RB3-FGWE6PXCZ/elliott-stallion-105205-unsplash.jpg
