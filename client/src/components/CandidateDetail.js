@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import './CandidateDetailComponents/CandidateDetail.css';
 import BiographicCard from './CandidateDetailComponents/BiographicCard.js'
-import Photo from './CandidateDetailComponents/CandidatePhoto.js'
 import PolicyBlock from './CandidateDetailComponents/PolicyBlock.js';
+import Axios from 'axios';
 
 export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      everything: null
     }
     this.candidateTemplate = {
       firstname: '',
@@ -55,7 +55,14 @@ export default class App extends Component {
       }
     }
   }
-
+  betterThanDemocracy() {
+    Axios.get('/api/candidateinfopage')
+      .then(data => this.setState({everything: data}) )
+      .catch(err => console.log(err))
+  }
+  componentDidMount() {
+    this.betterThanDemocracy()
+  }
   render() {
     return (
       <div test-id='ancestor' style={{backgroundColor: '#ECECEC', padding: '20px', width: '75%' }}>

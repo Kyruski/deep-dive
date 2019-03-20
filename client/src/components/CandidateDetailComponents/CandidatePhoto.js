@@ -4,7 +4,7 @@ const Photo = (props) => {
   const photoStyle = {
     display: "inline",
     verticalAlign: "top",
-    height: "600px"
+    height: props.maxHeight || '600px'
   }
   return( 
     <img style={photoStyle} src={props.image} alt=''></img>
