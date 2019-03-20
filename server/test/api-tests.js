@@ -16,31 +16,18 @@ chai.use(chaiHttp);
 
 // Tests for API calls start below
 describe('/GET VoterId', () => {
-  it('it should GET VoterId requirements by state', (done) => {
+  it('it should GET VoterId requirements by state', () => {
     chai
       .request('http://localhost:8000')
       .get('/api/voterId/:state')
-      .end((err, res) => {
+      .then((err, res) => {
         should.not.exist(err);
         should.exist(res);
         res.should.have.status(200);
-        expect(res).to.be.json;
+        res.body.should.be.a("array");
         done();
-      });
-  });
-})
-describe("GET /test", () => {
-  it("should get json test data", done => {
-    chai
-      .request("http://localhost:8000")
-      .get("/api/candidates/test")
-      .end((err, res) => {
-        should.not.exist(err);
-        should.exist(res);
-        res.should.have.status(200);
-        expect(res).to.be.json;
-        done();
-      });
+      })
+      .catch(err => err);
   });
 });
 
