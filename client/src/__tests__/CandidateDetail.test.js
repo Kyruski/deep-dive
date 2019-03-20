@@ -10,7 +10,7 @@ const setup = () => {
   const check = CanDs.getAllByTestId('ancestor');
   return check;
 }
-it('should render a parent div', () => {
+it('should render an ancestral div', () => {
   const parentDiv = setup();
   expect(parentDiv).toBeTruthy();
 });

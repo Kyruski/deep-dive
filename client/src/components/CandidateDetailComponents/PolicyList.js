@@ -8,11 +8,12 @@ const PolicyList = (props) => {
   return( 
     <>
     <List
-    renderItem={item =>
+    dataSource={listData}
+    renderItem={item => (
       <List.Item>
         <PolicyListEntry policy={item.policy} position={item.position} />
       </List.Item>
-    }
+    )}
     />
     </>
   )

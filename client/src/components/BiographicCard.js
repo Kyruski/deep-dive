@@ -1,9 +1,10 @@
 import React from 'react'
-import {List} from 'antd';
-
+import {Card} from 'antd';
 const Component = (props) => {
   return( 
-    <List />
+    <Card>
+      
+    </Card>
   )
 };
 
