@@ -30,7 +30,7 @@ const {
 
 app.use(express.static(join(__dirname, "../client/build")));
 
-app.use("/api/candidates/", candidates);
+app.use("/api/candidates", candidates);
 app.use("/api/policies", policies);
 app.use("/api/voter", voter);
 app.use('/api/candidateinfopage', candidateInfoPage)

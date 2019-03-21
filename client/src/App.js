@@ -16,14 +16,8 @@ class App extends Component {
   render() {
     return (
       <>
-        <h1>Welcome to Blue Ocean</h1>
-        <ul>
-          {/* {this.state.seaCreatures.map((seaCreature, i) => <li key={i}>{seaCreature}</li>)} */}
-        </ul>
-        {/* <VoterInfoDetail /> */} 
-        <CandidateDetail />
-        {/* <Head /> */}
-        {/* <MainRoutes /> */}
+        <Head />
+        <MainRoutes />
         {/* need to update with CandidateList */}
       </>
     );

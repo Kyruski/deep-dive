@@ -20,7 +20,7 @@ const getStateIdLaws = (state, cb) => {
   })
 }
 
-const findAllCandidates = (err, cb) => {
+const findAllCandidates = (id, cb) => {
   knex("candidates")
     .where('id', id)
     .then(results => {
