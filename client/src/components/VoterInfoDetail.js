@@ -29,11 +29,7 @@ let VoterInfoDetail = () => {
   return (
     <Layout>
       <Layout>
-<<<<<<< HEAD
-        < SideBar/>
-=======
         < SideBar />
->>>>>>> 29039e791fcc976de140b69494d64714542e728c
         <Content style={{ height: "80vh" }}>
           <NavRoutes />
         </Content>
