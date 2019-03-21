@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import React, { Component } from 'react';
 import PollMap from './components/PollMap.js';
@@ -6,17 +7,22 @@ import CandidateDetail from './components/CandidateDetail.js'
 import { Head, MainRoutes } from './components/header'
 
 
+=======
+import React, { Component } from "react";
+import PollMap from "./components/PollMap.js";
+import CandidateDetail from './components/CandidateDetail.js'
+import "./App.css";
+import { Head, MainRoutes } from "./components/header";
+>>>>>>> 29039e791fcc976de140b69494d64714542e728c
 console.log(MainRoutes);
-const api = `http://localhost:8000/api/example`;
 
 class App extends Component {
   constructor() {
-
     super();
     this.state = { seaCreatures: [] };
   }
 
-  componentDidMount() { }
+  componentDidMount() {}
 
   render() {
     return (
