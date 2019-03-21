@@ -33,11 +33,11 @@ export default class App extends Component {
       'Yang': 19,
       'Kokesh': 20,
       'McAfee': 21,
-      'Vohra': 22,
-      'Hunter': 23,
-      'Kroell': 24,
-      'Schriner': 25,
-      'Supreme': 26
+      'Supreme': 22,
+      'Vohra': 23,
+      'Hunter': 24,
+      'Kroell': 25,
+      'Schriner': 26
     }
     this.vote = this.candidateDictionary[this.props.candId] || Math.floor(Math.random()*25)
     this.server = process.env.SERVER || 'http://localhost:8000'
