@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PollMap from './components/PollMap.js';
 import './App.css';
 import { Head, MainRoutes } from './components/header'
-
-
 console.log(MainRoutes);
 
 class App extends Component {
@@ -12,7 +10,7 @@ class App extends Component {
     this.state = { seaCreatures: [] };
   }
 
-  componentDidMount() { }
+  componentDidMount() {}
 
   render() {
     return (
