@@ -4,7 +4,7 @@ import "antd/dist/antd.css";
 import { Router, Link } from "@reach/router";
 import SideBar from "./SideBar";
 import RegCheckForm from './regCheckForm'
-import VoterId from './voterId'
+import VoterId from './VoterID'
 import PollMap from './PollMap'
 
 
