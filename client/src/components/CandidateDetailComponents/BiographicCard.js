@@ -55,18 +55,18 @@ class BioCard extends Component {
     return(
       <>
         <Card 
-        title={this.props.details ? `${this.props.details['first-name']} ${this.props.details['last-name']}`: null}  
+        title={this.props.details ? `${this.props.details.firstName} ${this.props.details.lastName}`: null}  
         style={this.cardStyle} 
         ref={this.state.bioCardRef}
         >
           <p>{this.props.bio ? this.props.bio.bio : null}</p>
           <p>{this.props.details ? this.props.details.party : null}</p>
-          <p style={this.pStyle}>{this.state.birthday}</p>
-          <p style={this.pStyle}>Twitter: <a href={`http://twitter.com/${this.state.twitter}`}>@{this.state.twitter}</a></p>
-          <p>Campaign HQ: <a href={`${this.state.campaign}`}>{this.state.campaign}</a></p>
+          <p style={this.pStyle}>{this.props.details ? this.props.details.birthDate : null}</p>
+          <p style={this.pStyle}>Twitter <a href={this.props.details ? `http://twitter.com/${this.props.details.twitter}` : null}>@{this.props.details ? this.props.details.twitter: null}</a></p>
+          <p style={this.pStyle}><a href={this.props.details ? `${this.props.details.campaignLink}` : null}>{this.props.details ? this.props.details.campaignLink: null}</a></p>
         </Card>
         <Photo 
-        image={this.props.details ? this.props.details['photo-url'] : null} 
+        image={this.props.details ? this.props.details.photoUrl : null} 
         maxHeight={this.state.height} 
         maxWidth={this.state.width}/>
       </>

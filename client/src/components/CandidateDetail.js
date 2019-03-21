@@ -36,9 +36,10 @@ export default class App extends Component {
     }
     this.server = process.env.SERVER || 'http://localhost:8000'
   }
+  //This function randomly selects an index location to simulate being selected from a page.
   betterThanDemocracy() {
     const vote = Math.floor(Math.random()*25)
-    Axios.get(`${this.server}/api/candidateinfopage`)
+    Axios.get(`${this.server}/api/candidates`)
       .then(data => this.setState({details: data.data[vote]}) )
       .catch(err => console.log(err))
 
