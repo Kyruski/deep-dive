@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './CandidateDetailComponents/CandidateDetail.css';
 import BiographicCard from './CandidateDetailComponents/BiographicCard.js'
 import PolicyBlock from './CandidateDetailComponents/PolicyBlock.js';
 import Axios from 'axios';

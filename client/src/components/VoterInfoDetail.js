@@ -3,7 +3,7 @@ import { Row, Col, Card, Layout, Menu, Anchor } from "antd";
 import "antd/dist/antd.css";
 import { Router, Link } from "@reach/router";
 import SideBar from "./SideBar";
-import RegCheckForm from './regCheckForm'
+import RegCheckForm from './RegCheckForm'
 import VoterId from './VoterID'
 import PollMap from './PollMap'
 
