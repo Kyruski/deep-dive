@@ -3,7 +3,6 @@ import PollMap from "./components/PollMap.js";
 import CandidateDetail from './components/CandidateDetail.js'
 import "./App.css";
 import { Head, MainRoutes } from "./components/header";
-console.log(MainRoutes);
 
 class App extends Component {
   constructor() {
@@ -16,8 +15,14 @@ class App extends Component {
   render() {
     return (
       <>
-        <Head />
-        <MainRoutes />
+        <h1>Welcome to Blue Ocean</h1>
+        <ul>
+          {/* {this.state.seaCreatures.map((seaCreature, i) => <li key={i}>{seaCreature}</li>)} */}
+        </ul>
+        {/* <VoterInfoDetail /> */} 
+        <CandidateDetail />
+        {/* <Head /> */}
+        {/* <MainRoutes /> */}
         {/* need to update with CandidateList */}
       </>
     );
