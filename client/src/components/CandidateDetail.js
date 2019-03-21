@@ -34,21 +34,21 @@ export default class App extends Component {
         plannedParenthood: 'No'
       }
     }
+    this.vote = props.candId || Math.floor(Math.random()*25)
     this.server = process.env.SERVER || 'http://localhost:8000'
   }
   //This function randomly selects an index location to simulate being selected from a page.
   betterThanDemocracy() {
-    const vote = Math.floor(Math.random()*25)
-    Axios.get(`${this.server}/api/candidates`)
-      .then(data => this.setState({details: data.data[vote]}) )
+    Axios.get(`${this.server}/api/candidates/${this.vote}`)
+      .then(data => this.setState({details: data.data}) )
       .catch(err => console.log(err))
 
-      Axios.get(`${this.server}/api/bios`)
-      .then(data => this.setState({bio: data.data[vote]}))
+      Axios.get(`${this.server}/api/bios/${this.vote}`)
+      .then(data => this.setState({bio: data.data}))
       .catch(err => console.log(err))
 
-      Axios.get(`${this.server}/api/policies`)
-        .then(data => this.setState({policies: data.data[vote]}))
+      Axios.get(`${this.server}/api/policies/${this.vote}`)
+        .then(data => this.setState({policies: data.data}))
         .catch(err => console.log(err))
   }
   componentDidMount() {
